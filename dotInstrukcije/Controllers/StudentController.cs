@@ -4,70 +4,128 @@ using MongoDB.Bson;
 
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson.Serialization.IdGenerators;
+using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dotInstrukcije.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
     public class StudentController : Controller
     {
         private readonly MongoDbService _mongodbService;
-        public StudentController(MongoDbService mongoDbService) => _mongodbService = mongoDbService;
+        private readonly JwtTokenService _jwtTokenService;
 
-        [HttpGet]
-        public async Task<List<Student>> Get() => await _mongodbService.GetStudentsAsync();
-
-        [HttpGet("Get/{id}")]
-        public async Task<Student> Get(ObjectId id)
+        public StudentController(MongoDbService mongoDbService, JwtTokenService jwtTokenService)
         {
-            var student = await _mongodbService.GetStudentAsyncById(id);
-            if(student is null)
+            _mongodbService = mongoDbService;
+            _jwtTokenService = jwtTokenService;
+        }
+
+        [HttpGet("students")]
+        [Authorize]
+        public async Task<IActionResult> GetStudents()
+        {
+            try
             {
-                return null;
+                var students = await _mongodbService.GetStudentsAsync();
+                return Ok(new { success = true, students, message = "Retrieved students successfully" });
+            }
+            catch
+            {
+                return StatusCode(500, new { success = false, message = "Internal server error" });
+            }
+        }
+        [HttpGet("student/{email}")]
+        [Authorize]
+        public async Task<IActionResult> GetStudent(string email)
+        {
+            var student = await _mongodbService.GetStudentAsyncByEmail(email);
+            if (student == null)
+            {
+                return NotFound(new { success = false, message = "Student not found" });
             }
 
-            return student;
+            return Ok(new { success = true, student, message = "Student found successfully"});
         }
 
-        [HttpPost("CreateAsync")]
-        public async Task<IActionResult> CreateAsync(Student student)
+        [HttpPost("/register/student")]
+        public async Task<IActionResult> RegisterStudent(Student student)
         {
-            await _mongodbService.CreateStudentAsync(student);
-
-            return CreatedAtAction(nameof(Get), new { id = student.id }, student);
-        }
-
-        [HttpPost("Update/{id}")]
-        public async Task<IActionResult> Update(ObjectId id, Student student)
-        {
-            var studentToUpdate = await _mongodbService.GetStudentAsyncById(id);
-
-            if(studentToUpdate is null)
+            try
             {
-                return NotFound();
+                var existingStudent = await _mongodbService.GetStudentAsyncByEmail(student.email);
+                if (existingStudent != null)
+                {
+                    return Conflict(new { success = false, message = "Email already exists" });
+                }
+
+                student.password = _mongodbService.HashPassword(student.password);
+
+                await _mongodbService.CreateStudentAsync(student);
+
+                return CreatedAtAction(nameof(GetStudent), new { email = student.email }, new { success = true, message = "Student registered successfully" });
+            }
+            catch
+            {
+                return StatusCode(500, new { success = false, message = "Internal server error" });
+            }
+        }
+
+        [HttpPost("/login/student")]
+        public async Task<IActionResult> Login(LoginRequest model)
+        {
+            var student = await _mongodbService.GetStudentAsyncByEmailAndPassword(model.Email, model.Password);
+            if (student == null)
+            {
+                return BadRequest(new { success = false, message = "Invalid email or password" });
             }
 
-            student.id = studentToUpdate.id;
+            var token = _jwtTokenService.GenerateToken(student.email);
 
-            await _mongodbService.UpdateStudentAsync(id, student);
-
-            return NoContent();
-        }
-
-        [HttpPost("Delete/{id}")]
-        public async Task<IActionResult> Delete(ObjectId id)
-        {
-            var student = await _mongodbService.GetStudentAsyncById(id);
-
-            if (student is null)
+            return Ok(new
             {
-                return NotFound();
-            }
+                success = true,
+                student = student,
+                token = token,
+                message = "Login successful"
+            });
 
-            await _mongodbService.DeleteStudentAsync(id);
-
-            return NoContent();
         }
+
+
+        /*
+         [HttpPost("Update/{id}")]
+         public async Task<IActionResult> Update(ObjectId id, Student student)
+         {
+             var studentToUpdate = await _mongodbService.GetStudentAsyncById(id);
+
+             if(studentToUpdate is null)
+             {
+                 return NotFound();
+             }
+
+             student.id = studentToUpdate.id;
+
+             await _mongodbService.UpdateStudentAsync(id, student);
+
+             return NoContent();
+         }
+
+         [HttpPost("Delete/{id}")]
+         public async Task<IActionResult> Delete(ObjectId id)
+         {
+             var student = await _mongodbService.GetStudentAsyncById(id);
+
+             if (student is null)
+             {
+                 return NotFound();
+             }
+
+             await _mongodbService.DeleteStudentAsync(id);
+
+             return NoContent();
+         }
+        */
 
     }
 }

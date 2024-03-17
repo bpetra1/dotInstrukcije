@@ -11,6 +11,15 @@ builder.Services.Configure<MongoDbSettings>(
 
 builder.Services.AddSingleton<MongoDbService>();
 
+builder.Services.AddSingleton<JwtTokenService>(provider =>
+{
+    var secretKey = builder.Configuration["Jwt:SecretKey"];
+    var expiryHours = Convert.ToInt32(builder.Configuration["Jwt:ExpiryHours"]);
+
+    return new JwtTokenService(secretKey, expiryHours);
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
