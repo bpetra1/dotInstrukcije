@@ -49,17 +49,37 @@ namespace dotInstrukcije.Controllers
         }
 
         [HttpPost("/register/student")]
-        public async Task<IActionResult> RegisterStudent(Student student)
+        public async Task<IActionResult> RegisterStudent([FromForm] IFormCollection formData)
         {
             try
             {
-                var existingStudent = await _mongodbService.GetStudentAsyncByEmail(student.email);
+                var email = formData["email"];
+                var name = formData["name"];
+                var surname = formData["surname"];
+                var password = formData["password"];
+                var confirmPassword = formData["confirmPassword"];
+                var profilePictureUrl = formData["profilePictureUrl"];
+
+                if (password != confirmPassword)
+                {
+                    return BadRequest(new { success = false, message = "Password and confirm password do not match" });
+                }
+
+                var existingStudent = await _mongodbService.GetStudentAsyncByEmail(email);
                 if (existingStudent != null)
                 {
                     return Conflict(new { success = false, message = "Email already exists" });
                 }
 
-                student.password = _mongodbService.HashPassword(student.password);
+                var student = new Student
+                {
+                    email = email,
+                    name = name,
+                    surname=surname,
+                    password = _mongodbService.HashPassword(password),
+                    profilePictureUrl = profilePictureUrl
+                };
+
 
                 await _mongodbService.CreateStudentAsync(student);
 
@@ -72,8 +92,13 @@ namespace dotInstrukcije.Controllers
         }
 
         [HttpPost("/login/student")]
-        public async Task<IActionResult> Login(LoginRequest model)
+        public async Task<IActionResult> Login([FromBody] LoginRequest model)
         {
+            if (model == null)
+            {
+                return BadRequest(new { success = false, message = "Invalid request data" });
+            }
+
             var student = await _mongodbService.GetStudentAsyncByEmailAndPassword(model.Email, model.Password);
             if (student == null)
             {
@@ -89,8 +114,8 @@ namespace dotInstrukcije.Controllers
                 token = token,
                 message = "Login successful"
             });
-
         }
+
 
 
         /*

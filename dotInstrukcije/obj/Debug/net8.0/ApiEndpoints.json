@@ -66,9 +66,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "professor",
-        "Type": "dotInstrukcije.Models.Professor",
-        "IsRequired": true
+        "Name": "formData",
+        "Type": "Microsoft.AspNetCore.Http.IFormCollection",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -82,9 +82,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "student",
-        "Type": "dotInstrukcije.Models.Student",
-        "IsRequired": true
+        "Name": "formData",
+        "Type": "Microsoft.AspNetCore.Http.IFormCollection",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

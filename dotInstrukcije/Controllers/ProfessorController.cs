@@ -49,17 +49,38 @@ namespace dotInstrukcije.Controllers
         }
 
         [HttpPost("/register/professor")]
-        public async Task<IActionResult> RegisterProfessor(Professor professor)
+        public async Task<IActionResult> RegisterProfessor([FromForm] IFormCollection formData)
         {
             try
             {
-                var existingProfessor = await _mongodbService.GetProfessorAsyncByEmail(professor.email);
+                var email = formData["email"];
+                var name = formData["name"];
+                var surname = formData["surname"];
+                var password = formData["password"];
+                var confirmPassword = formData["confirmPassword"];
+                var profilePictureUrl = formData["profilePictureUrl"];
+                var subjects = formData["subjects"]; // Assuming subjects are sent as an array
+
+                if (password != confirmPassword)
+                {
+                    return BadRequest(new { success = false, message = "Password and confirm password do not match" });
+                }
+
+                var existingProfessor = await _mongodbService.GetProfessorAsyncByEmail(email);
                 if (existingProfessor != null)
                 {
                     return Conflict(new { success = false, message = "Email already exists" });
                 }
 
-                professor.password = _mongodbService.HashPassword(professor.password);
+                var professor = new Professor
+                {
+                    email = email,
+                    name = name,
+                    surname = surname,
+                    password = _mongodbService.HashPassword(password),
+                    profilePictureUrl = profilePictureUrl,
+                    subjects = subjects.ToList() 
+                };
 
                 await _mongodbService.CreateProfessorAsync(professor);
 
@@ -72,8 +93,13 @@ namespace dotInstrukcije.Controllers
         }
 
         [HttpPost("/login/professor")]
-        public async Task<IActionResult> Login(LoginRequest model)
+        public async Task<IActionResult> Login([FromBody] LoginRequest model)
         {
+            if (model == null)
+            {
+                return BadRequest(new { success = false, message = "Invalid request data" });
+            }
+
             var professor = await _mongodbService.GetProfessorAsyncByEmailAndPassword(model.Email, model.Password);
             if (professor == null)
             {
@@ -89,7 +115,6 @@ namespace dotInstrukcije.Controllers
                 token = token,
                 message = "Login successful"
             });
-
         }
 
 
