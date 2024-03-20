@@ -9,31 +9,27 @@ namespace dotInstrukcije.Services
 {
     public class JwtTokenService
     {
-        private readonly string _secretKey;
-        private readonly int _expiryHours;
-
-        public JwtTokenService(string secretKey, int expiryHours)
+        private IConfiguration _config;
+        public JwtTokenService(IConfiguration config)
         {
-            _secretKey = secretKey;
-            _expiryHours = expiryHours;
+            _config = config;
         }
 
-        public string GenerateToken(string userEmail)
+        public string GenerateToken()
         {
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.Email, userEmail),
-            };
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var Sectoken = new JwtSecurityToken(_config["Jwt:Issuer"],
+              _config["Jwt:Issuer"],
+              null,
+              expires: DateTime.Now.AddMinutes(120),
+              signingCredentials: credentials);
 
-            var token = new JwtSecurityToken(
-                claims: claims,
-                expires: DateTime.Now.AddHours(_expiryHours),
-                signingCredentials: creds);
+            var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return token;
+
         }
     }
 }

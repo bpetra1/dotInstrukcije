@@ -13,6 +13,8 @@ namespace dotInstrukcije.Services
         private readonly IMongoCollection<Student> _studentCollection;
         private readonly IMongoCollection<Professor> _professorCollection;
         private readonly IMongoCollection<Subject> _subjectCollection;
+        private readonly IMongoCollection<InstructionsDate> _instructionCollection;
+
 
         public MongoDbService(IOptions<MongoDbSettings> mongoDbSettings)
         {
@@ -23,6 +25,7 @@ namespace dotInstrukcije.Services
             _studentCollection = mongoDatabase.GetCollection<Student>("Student");
             _professorCollection = mongoDatabase.GetCollection<Professor>("Professor");
             _subjectCollection = mongoDatabase.GetCollection<Subject>("Subject");
+            _instructionCollection = mongoDatabase.GetCollection<InstructionsDate>("InstructionsDate");
 
         }
 
@@ -44,14 +47,26 @@ namespace dotInstrukcije.Services
             string hashedPassword = HashPassword(password);
             return await _professorCollection.Find(x => x.email == email && x.password == hashedPassword).FirstOrDefaultAsync();
         }
+        public async Task CreateProfessorAsync(Professor professor) => await _professorCollection.InsertOneAsync(professor);
+
 
         public async Task CreateSubjectAsync(Subject subject) => await _subjectCollection.InsertOneAsync(subject);
         public async Task<List<Subject>> GetSubjectsAsync() => await _subjectCollection.Find(_ => true).ToListAsync();
         public async Task<Subject> GetSubjectAsyncByUrl(string url) => await _subjectCollection.Find(x => x.url == url).FirstOrDefaultAsync();
         public async Task<Subject> GetSubjectAsyncByTitle(string title) => await _subjectCollection.Find(x => x.title == title).FirstOrDefaultAsync();
 
-        public async Task CreateProfessorAsync(Professor professor) => await _professorCollection.InsertOneAsync(professor);
-
+        public async Task<bool> ScheduleInstructionSessionAsync(InstructionsDate instructionsDate)
+        {
+            try
+            {
+                await _instructionCollection.InsertOneAsync(instructionsDate);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())

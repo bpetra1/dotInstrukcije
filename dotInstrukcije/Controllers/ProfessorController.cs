@@ -59,7 +59,7 @@ namespace dotInstrukcije.Controllers
                 var password = formData["password"];
                 var confirmPassword = formData["confirmPassword"];
                 var profilePictureUrl = formData["profilePictureUrl"];
-                var subjects = formData["subjects"]; // Assuming subjects are sent as an array
+                var subjects = formData["subjects"];
 
                 if (password != confirmPassword)
                 {
@@ -106,7 +106,7 @@ namespace dotInstrukcije.Controllers
                 return BadRequest(new { success = false, message = "Invalid email or password" });
             }
 
-            var token = _jwtTokenService.GenerateToken(professor.email);
+            var token = _jwtTokenService.GenerateToken();
 
             return Ok(new
             {

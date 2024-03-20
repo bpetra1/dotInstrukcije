@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "dotInstrukcije.Controllers.SubjectController",
+    "Method": "ScheduleInstructionSession",
+    "RelativePath": "instructions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "dotInstrukcije.Models.InstructionsDate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "dotInstrukcije.Controllers.ProfessorController",
     "Method": "Login",
     "RelativePath": "login/professor",

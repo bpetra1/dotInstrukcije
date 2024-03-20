@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\models\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:models\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\controllers\\subjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:controllers\\subjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\helper\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,12 +31,20 @@
       "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\dotinstrukcije.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:dotinstrukcije.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\models\\instructionsdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:models\\instructionsdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|c:\\dotget\\dotinstrukcije\\dotinstrukcije-backend-petrabursic\\dotinstrukcije\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD2FF37E-12C7-42EA-8B24-C1A472C0743C}|dotInstrukcije.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,59 +74,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProfessorController.cs",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\ProfessorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProfessorController.cs",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\ProfessorController.cs",
-              "RelativeToolTip": "Controllers\\ProfessorController.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAkwGkAAABiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T09:47:17.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SubjectController.cs",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\SubjectController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SubjectController.cs",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\SubjectController.cs",
-              "RelativeToolTip": "Controllers\\SubjectController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T14:15:20.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MongoDbService.cs",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\MongoDbService.cs",
-              "RelativeDocumentMoniker": "Services\\MongoDbService.cs",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\MongoDbService.cs",
-              "RelativeToolTip": "Services\\MongoDbService.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAA5wC0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T12:41:26.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "StudentController.cs",
               "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\StudentController.cs",
               "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
               "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\StudentController.cs",
               "RelativeToolTip": "Controllers\\StudentController.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAYwEcAAAARAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAArwD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T12:32:29.71Z",
+              "WhenOpened": "2024-03-20T15:22:33.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAQwBEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T13:09:13.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtTokenService.cs",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\JwtTokenService.cs",
+              "RelativeDocumentMoniker": "Services\\JwtTokenService.cs",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\JwtTokenService.cs",
+              "RelativeToolTip": "Services\\JwtTokenService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T12:41:23.677Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-16T10:48:00.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MongoDbSettings.cs",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Helper\\MongoDbSettings.cs",
+              "RelativeDocumentMoniker": "Helper\\MongoDbSettings.cs",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Helper\\MongoDbSettings.cs",
+              "RelativeToolTip": "Helper\\MongoDbSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T12:33:53.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Subject.cs",
               "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Models\\Subject.cs",
               "RelativeDocumentMoniker": "Models\\Subject.cs",
@@ -143,33 +152,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Professor.cs",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Models\\Professor.cs",
-              "RelativeDocumentMoniker": "Models\\Professor.cs",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Models\\Professor.cs",
-              "RelativeToolTip": "Models\\Professor.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAcwAsAAAAkAAAA",
+              "DocumentIndex": 0,
+              "Title": "SubjectController.cs",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\SubjectController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SubjectController.cs",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\SubjectController.cs",
+              "RelativeToolTip": "Controllers\\SubjectController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwB0AAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T13:41:14.858Z",
+              "WhenOpened": "2024-03-17T14:15:20.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProfessorController.cs",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\ProfessorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfessorController.cs",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Controllers\\ProfessorController.cs",
+              "RelativeToolTip": "Controllers\\ProfessorController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T22:15:17.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "JwtTokenService.cs",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\JwtTokenService.cs",
-              "RelativeDocumentMoniker": "Services\\JwtTokenService.cs",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\JwtTokenService.cs",
-              "RelativeToolTip": "Services\\JwtTokenService.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAqwCcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T12:41:23.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Models\\Student.cs",
               "RelativeDocumentMoniker": "Models\\Student.cs",
@@ -183,53 +192,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "MongoDbSettings.cs",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Helper\\MongoDbSettings.cs",
-              "RelativeDocumentMoniker": "Helper\\MongoDbSettings.cs",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Helper\\MongoDbSettings.cs",
-              "RelativeToolTip": "Helper\\MongoDbSettings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAkAAAA",
+              "Title": "InstructionsDate.cs",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Models\\InstructionsDate.cs",
+              "RelativeDocumentMoniker": "Models\\InstructionsDate.cs",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Models\\InstructionsDate.cs",
+              "RelativeToolTip": "Models\\InstructionsDate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T12:33:53.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAQwC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T13:09:13.23Z",
+              "WhenOpened": "2024-03-18T22:49:05.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-16T10:48:00.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "dotInstrukcije.csproj",
-              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\dotInstrukcije.csproj",
-              "RelativeDocumentMoniker": "dotInstrukcije.csproj",
-              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\dotInstrukcije.csproj",
-              "RelativeToolTip": "dotInstrukcije.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-03-16T10:45:48.805Z",
+              "Title": "MongoDbService.cs",
+              "DocumentMoniker": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\MongoDbService.cs",
+              "RelativeDocumentMoniker": "Services\\MongoDbService.cs",
+              "ToolTip": "C:\\dotGET\\dotInstrukcije\\dotInstrukcije-backend-petrabursic\\dotInstrukcije\\Services\\MongoDbService.cs",
+              "RelativeToolTip": "Services\\MongoDbService.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T12:41:26.104Z",
               "EditorCaption": ""
             }
           ]

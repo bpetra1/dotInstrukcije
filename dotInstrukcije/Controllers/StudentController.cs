@@ -105,7 +105,7 @@ namespace dotInstrukcije.Controllers
                 return BadRequest(new { success = false, message = "Invalid email or password" });
             }
 
-            var token = _jwtTokenService.GenerateToken(student.email);
+            var token = _jwtTokenService.GenerateToken();
 
             return Ok(new
             {

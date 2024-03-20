@@ -63,3 +63,6 @@ C:\dotGET\dotInstrukcije\dotInstrukcije-backend-petrabursic\dotInstrukcije\bin\D
 C:\dotGET\dotInstrukcije\dotInstrukcije-backend-petrabursic\dotInstrukcije\bin\Debug\net8.0\tr\System.ServiceModel.Primitives.resources.dll
 C:\dotGET\dotInstrukcije\dotInstrukcije-backend-petrabursic\dotInstrukcije\bin\Debug\net8.0\zh-Hans\System.ServiceModel.Primitives.resources.dll
 C:\dotGET\dotInstrukcije\dotInstrukcije-backend-petrabursic\dotInstrukcije\bin\Debug\net8.0\zh-Hant\System.ServiceModel.Primitives.resources.dll
+C:\dotGET\dotInstrukcije\dotInstrukcije-backend-petrabursic\dotInstrukcije\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\dotGET\dotInstrukcije\dotInstrukcije-backend-petrabursic\dotInstrukcije\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\dotGET\dotInstrukcije\dotInstrukcije-backend-petrabursic\dotInstrukcije\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
