@@ -9,10 +9,20 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "dotInstrukcije.Models.InstructionsDate",
+        "Type": "dotInstrukcije.Models.InstructionSent",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotInstrukcije.Controllers.SubjectController",
+    "Method": "GetInstructions",
+    "RelativePath": "instructions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -171,6 +181,54 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotInstrukcije.Controllers.ProfessorController",
+    "Method": "UpdateNameSurname",
+    "RelativePath": "updateNameSurname",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "dotInstrukcije.Models.UpdateNameSurname",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotInstrukcije.Controllers.ProfessorController",
+    "Method": "UpdatePassword",
+    "RelativePath": "updatePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "dotInstrukcije.Models.UpdatePassword",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotInstrukcije.Controllers.ProfessorController",
+    "Method": "UpdateProfilePicture",
+    "RelativePath": "updateProfilePicture",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "dotInstrukcije.Models.UpdateProfilePicture",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

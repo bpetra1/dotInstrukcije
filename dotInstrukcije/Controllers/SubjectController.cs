@@ -1,12 +1,9 @@
-﻿using dotInstrukcije.Services;
-using dotInstrukcije.Models;
-using MongoDB.Bson;
-
-using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson.Serialization.IdGenerators;
-using Microsoft.AspNetCore.Identity.Data;
+﻿using dotInstrukcije.Models;
+using dotInstrukcije.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System;
 
 namespace dotInstrukcije.Controllers
 {
@@ -76,18 +73,24 @@ namespace dotInstrukcije.Controllers
             }
         }
 
+
         [HttpPost("instructions")]
-        [Authorize] 
-        public async Task<IActionResult> ScheduleInstructionSession([FromBody] InstructionsDate request)
+        [Authorize]
+        public async Task<IActionResult> ScheduleInstructionSession([FromBody] InstructionSent request)
         {
             try
             {
-                var studentId = User.FindFirst(ClaimTypes.Email)?.Value;
+                var student = User.FindFirst(ClaimTypes.Name)?.Value;
 
-                request.studentId = studentId;
-                request.status = "sentInstructionRequests";
+                var instruction = new InstructionsDate
+                {
+                    date = request.date,
+                    email = request.professorId,
+                    studentId = student,
+                    status = "sentInstructionRequests"
+                };
 
-                var success = await _mongodbService.ScheduleInstructionSessionAsync(request);
+                var success = await _mongodbService.ScheduleInstructionSessionAsync(instruction);
 
                 if (success)
                 {
@@ -95,8 +98,37 @@ namespace dotInstrukcije.Controllers
                 }
                 else
                 {
-                    return BadRequest(new { success = false, message = "Failed to schedule instruction session" });
+                    return BadRequest(new { success = false, message = "Failed to schedule instruction session"});
                 }
+            }
+            catch
+            {
+                return StatusCode(500, new { success = false, message = "Internal server error" });
+            }
+        }
+
+        [HttpGet("instructions")]
+        [Authorize]
+        public async Task<IActionResult> GetInstructions()
+        {
+            try
+            {
+                string email = User.FindFirst(ClaimTypes.Name)?.Value;
+
+                var pastInstructions = await _mongodbService.GetPastInstructionsAsync(email);
+                var upcomingInstructions = await _mongodbService.GetUpcomingInstructionsAsync(email);
+                var sentInstructionRequests = await _mongodbService.GetSentInstructionRequestsAsync(email);
+
+                var instructions = new
+                {
+                    pastInstructions,
+                    upcomingInstructions,
+                    sentInstructionRequests
+                };
+
+
+                return Ok(new { instructions });
+                
             }
             catch
             {

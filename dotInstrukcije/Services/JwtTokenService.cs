@@ -15,14 +15,21 @@ namespace dotInstrukcije.Services
             _config = config;
         }
 
-        public string GenerateToken()
+        public string GenerateToken(string userEmail, string role)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, userEmail),
+                new Claim(ClaimTypes.Role, role)
+
+            };
+
             var Sectoken = new JwtSecurityToken(_config["Jwt:Issuer"],
               _config["Jwt:Issuer"],
-              null,
+              claims,
               expires: DateTime.Now.AddMinutes(120),
               signingCredentials: credentials);
 

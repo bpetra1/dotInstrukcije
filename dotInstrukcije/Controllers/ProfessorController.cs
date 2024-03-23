@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson.Serialization.IdGenerators;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace dotInstrukcije.Controllers
 {
@@ -106,7 +107,8 @@ namespace dotInstrukcije.Controllers
                 return BadRequest(new { success = false, message = "Invalid email or password" });
             }
 
-            var token = _jwtTokenService.GenerateToken();
+            var role = "Professor";
+            var token = _jwtTokenService.GenerateToken(model.Email, role);
 
             return Ok(new
             {
@@ -117,6 +119,221 @@ namespace dotInstrukcije.Controllers
             });
         }
 
+        [HttpPost("/updateNameSurname")]
+        [Authorize]
+        public async Task<IActionResult> UpdateNameSurname([FromBody] UpdateNameSurname model)
+        {
+            string email = User.FindFirst(ClaimTypes.Name)?.Value;
+            string role = User.FindFirst(ClaimTypes.Role)?.Value;
+
+            if(role == "Professor")
+            {
+                try
+                {
+                    var professorToUpdate = await _mongodbService.GetProfessorAsyncByEmail(email);
+                    string confirmPassword = _mongodbService.HashPassword(model.password);
+
+                    if (confirmPassword == professorToUpdate.password)
+                    {
+                        professorToUpdate.name = model.name;
+                        professorToUpdate.surname = model.surname;
+
+                        await _mongodbService.UpdateProfessorAsync(professorToUpdate, email);
+
+                        return Ok(new { success = true, message = "Professor found successfully" });
+                    }
+                    else
+                    {
+                        return BadRequest(new { success = false, message = "Wrong password." });
+                    }
+
+                } catch(Exception ex)
+                {
+                    return BadRequest(ex);
+                }
+
+            }
+            else if(role =="Student")
+            {
+                try
+                {
+                    var studentToUpdate = await _mongodbService.GetStudentAsyncByEmail(email);
+
+                    string confirmPassword = _mongodbService.HashPassword(model.password);
+
+                    if (confirmPassword == studentToUpdate.password)
+                    {
+                        studentToUpdate.name = model.name;
+                        studentToUpdate.surname = model.surname;
+
+                        await _mongodbService.UpdateStudentAsync(studentToUpdate, email);
+
+                        return Ok(new { success = true, message = "Student found successfully" });
+                    }
+                    else
+                    {
+                        return BadRequest(new { success=false, message = "Wrong password." });
+                    }
+                } catch(Exception ex)
+                {
+                    return BadRequest($"{ex.Message}");
+                }
+
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+        }
+
+        
+        [HttpPost("/updateProfilePicture")]
+        [Authorize]
+        public async Task<IActionResult> UpdateProfilePicture([FromBody] UpdateProfilePicture model)
+        {
+            string email = User.FindFirst(ClaimTypes.Name)?.Value;
+            string role = User.FindFirst(ClaimTypes.Role)?.Value;
+
+            if (role == "Professor")
+            {
+                try
+                {
+                    var professorToUpdate = await _mongodbService.GetProfessorAsyncByEmail(email);
+                    string confirmPassword = _mongodbService.HashPassword(model.password);
+
+                    if (confirmPassword == professorToUpdate.password)
+                    {
+                        professorToUpdate.profilePictureUrl = model.profilePictureUrl;
+
+                        await _mongodbService.UpdateProfessorAsync(professorToUpdate, email);
+
+                        return Ok(new { success = true, message = "Professor found successfully" });
+                    }
+                    else
+                    {
+                        return BadRequest(new { success = false, message = "Wrong password." });
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex);
+                }
+
+            }
+            else if (role == "Student")
+            {
+                try
+                {
+                    var studentToUpdate = await _mongodbService.GetStudentAsyncByEmail(email);
+
+                    string confirmPassword = _mongodbService.HashPassword(model.password);
+
+                    if (confirmPassword == studentToUpdate.password)
+                    {
+                        studentToUpdate.profilePictureUrl= model.profilePictureUrl;
+
+                        await _mongodbService.UpdateStudentAsync(studentToUpdate, email);
+
+                        return Ok(new { success = true, message = "Student found successfully" });
+                    }
+                    else
+                    {
+                        return BadRequest(new { success = false, message = "Wrong password." });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest($"{ex.Message}");
+                }
+
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+        }
+
+        [HttpPost("/updatePassword")]
+        [Authorize]
+        public async Task<IActionResult> UpdatePassword([FromBody] UpdatePassword model)
+        {
+            string email = User.FindFirst(ClaimTypes.Name)?.Value;
+            string role = User.FindFirst(ClaimTypes.Role)?.Value;
+
+            if (role == "Professor")
+            {
+                try
+                {
+                    var professorToUpdate = await _mongodbService.GetProfessorAsyncByEmail(email);
+                    string confirmPassword = _mongodbService.HashPassword(model.password);
+
+                    if (confirmPassword == professorToUpdate.password)
+                    {
+                        var newPass = _mongodbService.HashPassword(model.newpassword);
+                        professorToUpdate.password = newPass;
+
+                        await _mongodbService.UpdateProfessorAsync(professorToUpdate, email);
+
+                        return Ok(new { success = true, message = "Professor found successfully" });
+                    }
+                    else
+                    {
+                        return BadRequest(new { success = false, message = "Wrong password." });
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex);
+                }
+
+            }
+            else if (role == "Student")
+            {
+                try
+                {
+                    var studentToUpdate = await _mongodbService.GetStudentAsyncByEmail(email);
+
+                    string confirmPassword = _mongodbService.HashPassword(model.password);
+
+                    if (confirmPassword == studentToUpdate.password)
+                    {
+                        var newPass = _mongodbService.HashPassword(model.newpassword);
+                        studentToUpdate.password = newPass;
+
+                        await _mongodbService.UpdateStudentAsync(studentToUpdate, email);
+
+                        return Ok(new { success = true, message = "Student found successfully" });
+                    }
+                    else
+                    {
+                        return BadRequest(new { success = false, message = "Wrong password." });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest($"{ex.Message}");
+                }
+
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+        }
+
 
     }
+
+
 }
+
+
+
